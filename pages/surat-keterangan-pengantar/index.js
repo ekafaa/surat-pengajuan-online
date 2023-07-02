@@ -1,8 +1,7 @@
 import React from "react";
-import Aux from "../../app/components/_Aux";
-import NavbarLayout from "../../app/components/NavbarLayout";
-import "../../styles/styles.scss";
-import Introductory from "../../app/components/Letter/introductory";
+import Aux from "../../components/_Aux";
+import NavbarLayout from "../../components/NavbarLayout";
+import Introductory from "../../components/Letter/introductory";
 
 function SuratPengantar() {
   return (

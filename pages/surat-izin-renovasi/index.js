@@ -1,8 +1,7 @@
 import React from "react";
-import Aux from "../../app/components/_Aux";
-import NavbarLayout from "../../app/components/NavbarLayout";
-import "../../styles/styles.scss";
-import Renovation from "../../app/components/Letter/renovation";
+import Aux from "../../components/_Aux";
+import NavbarLayout from "../../components/NavbarLayout";
+import Renovation from "../../components/Letter/renovation";
 
 function SuratIzinRenovasi() {
   return (

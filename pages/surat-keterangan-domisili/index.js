@@ -1,8 +1,7 @@
 import React from "react";
-import Aux from "../../app/components/_Aux";
-import NavbarLayout from "../../app/components/NavbarLayout";
-import "../../styles/styles.scss";
-import Domicile from "../../app/components/Letter/domicile";
+import Aux from "../../components/_Aux";
+import NavbarLayout from "../../components/NavbarLayout";
+import Domicile from "../../components/Letter/domicile";
 
 function SuratDomisili() {
   return (

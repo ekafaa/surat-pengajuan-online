@@ -1,8 +1,8 @@
 import React from "react";
-import Aux from "../../../app/components/_Aux";
-import AdminDomicileComp from "../../../app/components/Admin/Letter/domicile";
-import NavbarLayout from "../../../app/components/NavbarLayout";
-import "../../../styles/styles.scss";
+import Aux from "../../../components/_Aux";
+import AdminDomicileComp from "../../../components/Admin/Letter/domicile";
+import NavbarLayout from "../../../components/NavbarLayout";
+
 function AdminDomicile() {
   return (
     <Aux>

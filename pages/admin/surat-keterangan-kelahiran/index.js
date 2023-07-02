@@ -1,8 +1,7 @@
 import React from "react";
-import Aux from "../../../app/components/_Aux";
-import AdminBirthComp from "../../../app/components/Admin/Letter/birth";
-import NavbarLayout from "../../../app/components/NavbarLayout";
-import "../../../styles/styles.scss";
+import Aux from "../../../components/_Aux";
+import AdminBirthComp from "../../../components/Admin/Letter/birth";
+import NavbarLayout from "../../../components/NavbarLayout";
 function AdminBirth() {
   return (
     <Aux>

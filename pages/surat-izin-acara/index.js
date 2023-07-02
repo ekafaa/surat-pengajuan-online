@@ -1,8 +1,7 @@
 import React from "react";
-import Aux from "../../app/components/_Aux";
-import NavbarLayout from "../../app/components/NavbarLayout";
-import "../../styles/styles.scss";
-import Event from "../../app/components/Letter/event";
+import Aux from "../../components/_Aux";
+import NavbarLayout from "../../components/NavbarLayout";
+import Event from "../../components/Letter/event";
 
 function SuratIzinAcara() {
   return (

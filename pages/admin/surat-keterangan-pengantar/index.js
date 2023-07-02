@@ -1,8 +1,8 @@
 import React from "react";
-import Aux from "../../../app/components/_Aux";
-import AdminIntroductoryComp from "../../../app/components/Admin/Letter/introductory";
-import NavbarLayout from "../../../app/components/NavbarLayout";
-import "../../../styles/styles.scss";
+import Aux from "../../../components/_Aux";
+import AdminIntroductoryComp from "../../../components/Admin/Letter/introductory";
+import NavbarLayout from "../../../components/NavbarLayout";
+
 function AdminIntroductory() {
   return (
     <Aux>

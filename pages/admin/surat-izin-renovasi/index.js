@@ -1,8 +1,7 @@
 import React from "react";
-import Aux from "../../../app/components/_Aux";
-import AdminRenovComp from "../../../app/components/Admin/Letter/renovation";
-import NavbarLayout from "../../../app/components/NavbarLayout";
-import "../../../styles/styles.scss";
+import Aux from "../../../components/_Aux";
+import AdminRenovComp from "../../../components/Admin/Letter/renovation";
+import NavbarLayout from "../../../components/NavbarLayout";
 function AdminRenov() {
   return (
     <Aux>

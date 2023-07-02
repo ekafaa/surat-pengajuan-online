@@ -1,7 +1,6 @@
 "use client";
-import AdminDasboard from "../../app/components/Admin/AdminDashboard";
-import NavbarLayout from "../../app/components/NavbarLayout";
-import "../../styles/styles.scss";
+import AdminDasboard from "../../components/Admin/AdminDashboard";
+import NavbarLayout from "../../components/NavbarLayout";
 export default function Home() {
   return (
     <main>
