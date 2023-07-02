@@ -1,0 +1,51 @@
+@import "~bootstrap/dist/css/bootstrap";
+// General theme contents
+@import "scss/partials/variables";
+@import "scss/partials/general";
+@import "scss/partials/generic";
+@import "scss/partials/mixins/function";
+@import "scss/partials/other/buttons";
+@import "scss/partials/other/button-table";
+
+// important Element
+@import "scss/partials/menu/menu-lite";
+@import "scss/partials/widget/widget";
+
+// Theme Element
+@import "scss/partials/theme-elements/form";
+@import "scss/partials/theme-elements/radiobox-checkbox";
+@import "scss/partials/theme-elements/labels-badges";
+@import "scss/partials/theme-elements/data-tables";
+@import "scss/partials/theme-elements/authentication";
+@import "scss/partials/theme-elements/button";
+@import "scss/partials/theme-elements/alert";
+@import "scss/partials/theme-elements/breadcrumb-pagination";
+@import "scss/partials/theme-elements/progress";
+@import "scss/partials/theme-elements/tooltip";
+@import "scss/partials/theme-elements/popover";
+@import "scss/partials/theme-elements/nav";
+@import "scss/partials/theme-elements/modal";
+
+@import "scss/partials/other/chart";
+@import "scss/partials/other/icon-lauouts";
+
+@import "scss/partials/third-party/third-party";
+
+//pages
+@import "scss/partials/menu/profile";
+@import "scss/partials/menu/text-editor";
+
+html,
+body {
+  min-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f5f5fa;
+  color: black;
+}
+
+#__next {
+  width: 100%;
+  height: 100%;
+}

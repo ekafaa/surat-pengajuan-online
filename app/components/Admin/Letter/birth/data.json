@@ -1,0 +1,56 @@
+{
+  "result": [
+    {
+      "address": "Jl, tidak tersedia no.25, Surabaya, Jawa Timur",
+      "birthplace": "Surabaya, 02 Juni 2019",
+      "childOrder": "1",
+      "fatherName": "Eka",
+      "gender": {
+        "label": "Pria",
+        "value": "Pria"
+      },
+      "job": "Belum Bekerja",
+      "motherName": "Yusuf",
+      "name": "Muhammad"
+    },
+    {
+      "address": "Jl, tidak tersedia no.25, Surabaya, Jawa Timur",
+      "birthplace": "Surabaya, 02 Juni 2019",
+      "childOrder": "1",
+      "fatherName": "Eka",
+      "gender": {
+        "label": "Pria",
+        "value": "Pria"
+      },
+      "job": "Belum Bekerja",
+      "motherName": "Yusuf",
+      "name": "Muhammad"
+    },
+    {
+      "address": "Jl, tidak tersedia no.25, Surabaya, Jawa Timur",
+      "birthplace": "Surabaya, 02 Juni 2019",
+      "childOrder": "1",
+      "fatherName": "Eka",
+      "gender": {
+        "label": "Pria",
+        "value": "Pria"
+      },
+      "job": "Belum Bekerja",
+      "motherName": "Yusuf",
+      "name": "Muhammad"
+    },
+    {
+      "address": "Jl, tidak tersedia no.25, Surabaya, Jawa Timur",
+      "birthplace": "Surabaya, 02 Juni 2019",
+      "childOrder": "1",
+      "fatherName": "Eka",
+      "gender": {
+        "label": "Pria",
+        "value": "Pria"
+      },
+      "job": "Belum Bekerja",
+      "motherName": "Yusuf",
+      "name": "Muhammad"
+    }
+  ]
+}

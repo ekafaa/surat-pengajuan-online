@@ -1,0 +1,51 @@
+.wrapperClassName {
+    background-color: gainsboro;
+    padding: 11px;
+    border-radius: 4px;
+}
+
+//------------------------------------ toolbar text editor ------------------------------------
+.toolbarClassName {
+    border: none !important;
+    background-color: gainsboro !important;
+    border-radius: 3px !important;
+    padding-top: 5px !important;
+    padding-left: 0px !important;
+}
+
+.rdw-option-wrapper {
+    height: 23px !important;
+    border-color: rgb(0, 47, 126) !important;
+
+    &.rdw-option-active {
+        background: -webkit-gradient(linear, left top, left bottom, from(#00ADEE), to(#9EBEF5));
+    }
+}
+
+.rdw-dropdown-wrapper {
+    border-radius: 5px !important;
+    border-color: rgb(0, 47, 126) !important;
+}
+
+// .rdw-image-wrapper {
+//   display: none !important;
+// }
+
+.rdw-remove-wrapper {
+    display: none !important;
+}
+
+//------------------------------------ End toolbar text editor ------------------------------------
+
+//------------------------------------ editor style text editor -----------------------------------
+.public-DraftEditorPlaceholder-root {
+    position: unset;
+    color: #5c6873;
+}
+
+.editorClassName {
+    min-height: 150px !important;
+    border: 1px solid white;
+    padding: 0 0 0 10px;
+    background: white;
+}
