@@ -1,15 +1,16 @@
 import React from "react";
 import Aux from "../../components/_Aux";
 import NavbarLayout from "../../components/NavbarLayout";
-import Event from "../../components/Letter/event";
+import EventList from "../../components/Letter/table/event";
+import withAuth from "../../hoc/withAuth";
 
 function SuratIzinAcara() {
   return (
     <Aux>
       <NavbarLayout />
-      <Event />
+      <EventList />
     </Aux>
   );
 }
 
-export default SuratIzinAcara;
+export default withAuth(SuratIzinAcara);

@@ -1,18 +1,24 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { Form } from "react-bootstrap";
-import swal from "sweetalert2";
+import Swal from "sweetalert2";
 import * as Yup from "yup";
 
 import Aux from "../../_Aux";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import {
+  getJwtToken,
+  roleUser,
+  setLoginSession,
+} from "../../../utils/utilization";
+import { AUTH_HEADERS, API_URL, ROUTES } from "../../../utils/constant";
 
 export default function Login() {
+  const router = useRouter();
   const validationSchema = Yup.object().shape({
-    email: Yup.string().required("Email Harus Diisi"),
+    username: Yup.string().required("Username Harus Diisi"),
     password: Yup.string().required("Passowrd Harus Diisi"),
   });
   const resolvers = {
@@ -22,55 +28,54 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm(resolvers);
-  const router = useRouter();
-
-  // const dispatch = useDispatch();
-  // const history = useHistory();
-
-  // const loginResult = useSelector(state => state.login?.result);
-  // const loginError = useSelector(state => state.login?.error);
-  // const loginLoading = useSelector(state => state.login?.loading);
-
-  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    // if (isInitialMount.current) {
-    //     isInitialMount.current = false;
-    // } else {
-    //     if (loginError) {
-    //         swal({
-    //             title: 'Tidak Bisa Login',
-    //             text: 'Silahkan ulangi kembali',
-    //             icon: 'error', timer: 3000
-    //         })
-    //     } else if (loginResult) {
-    //         if (loginResult?.accessToken) {
-    //             dispatch(setToken({ userToken: loginResult?.accessToken }))
-    //             dispatch(getDesa())
-    //             swal({ title: 'Sukses', text: 'Sukses Login', icon: 'success', timer: 3000 });
-    //             setTimeout(() => history.push(ROUTES.DASHBOARD()), 2000)
-    //         }
-    //     }
-    // }
-  }, []);
-
-  const onSubmit = (data) => {
-    const param = {
-      email: data?.email,
-      password: data?.password,
-    };
-
-    if (data.email.toUpperCase() === "ADMIN") {
-      router.push("/admin");
-    } else if (data.email.toUpperCase() === "USER") {
+    if (getJwtToken()) {
       router.push("/");
-    } else {
-      router.push("/auth/login");
     }
-    // dispatch(login(param))
+  }, [router]);
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch(`https://localhost:3000/login`, {
+        method: "POST",
+        headers: AUTH_HEADERS,
+        body: JSON.stringify({
+          username: data.username,
+          password: data.password,
+        }),
+      });
+      const result = await response.json();
+      if (response.status !== 200) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: result.message,
+          timer: 1500,
+          showConfirmButton: false,
+        });
+      } else if (response.status === 200) {
+        setLoginSession(result.access_token);
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+          text: "You have successfully logged in!",
+          timer: 1500,
+          showConfirmButton: false,
+        }).then(() => {
+          if (roleUser === "admin") {
+            router.push(ROUTES.ADMIN_DASHBOARD());
+          } else {
+            router.push(ROUTES.USER_DASHBOARD());
+          }
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
+
   return (
     <Aux>
       <div className="auth-wrapper">
@@ -90,19 +95,19 @@ export default function Login() {
               <Form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
                 <Form.Group className="text-start mb-3">
                   <Form.Label className="font-weight-bold mb-0">
-                    Email
+                    Username
                   </Form.Label>
                   <Form.Control
-                    {...register("email")}
-                    name="email"
+                    {...register("username")}
+                    name="username"
                     type="text"
-                    placeholder="Masukkan Email"
+                    placeholder="Masukkan Username"
                     style={{
-                      borderColor: errors.email ? "#fa1e0e" : "#8692A6",
+                      borderColor: errors.username ? "#fa1e0e" : "#8692A6",
                     }}
                   />
-                  {errors.email && (
-                    <p className="txt-error">{errors.email.message}</p>
+                  {errors.username && (
+                    <p className="txt-error">{errors.username.message}</p>
                   )}
                 </Form.Group>
                 <Form.Group className="text-start mb-3">
@@ -128,13 +133,7 @@ export default function Login() {
                   className="w-100 btn btn-primary shadow-2 mb-4"
                 >
                   Login
-                  {/* <span
-                    className="spinner-border spinner-border-sm ml-2"
-                    role="status"
-                    aria-hidden="true"
-                  ></span> */}
                 </button>
-                {/* <p className="mb-2 text-muted">Forgot password? <NavLink to={ROUTES.RESET_PASSWORD()}>Reset Passowrd</NavLink></p> */}
                 <p className="mb-0 text-muted">
                   Don’t have an account?{" "}
                   <Link href="/auth/register">Register</Link>

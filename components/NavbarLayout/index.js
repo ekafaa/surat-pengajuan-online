@@ -2,15 +2,26 @@ import { Dropdown } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Avatar1 from "../../public/images/avatar-1.jpg";
+import Avatar2 from "../../public/images/avatar-2.jpg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { ROUTES } from "../../utils/constant";
+import {
+  decodeJwtToken,
+  getFirstTwoNames,
+  getJwtToken,
+  removeLoginSession,
+} from "../../utils/utilization";
 
 function NavbarLayout() {
   const router = useRouter();
   const handleLogout = () => {
-    router.push("/auth/login");
+    removeLoginSession();
+    router.push(ROUTES.LOGIN());
   };
+  const decode = decodeJwtToken(getJwtToken());
   return (
     <Navbar
       expand="lg"
@@ -19,16 +30,6 @@ function NavbarLayout() {
       }}
     >
       <Container>
-        <Link href="/">
-          <Image
-            src={"/static/images/avatar-1.jpg"}
-            width={50}
-            height={50}
-            className="img-radius m-r-10"
-            alt="User Profile"
-          />
-        </Link>
-        <h4>Logo</h4>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -39,19 +40,20 @@ function NavbarLayout() {
             <Dropdown.Toggle
               variant="link"
               id="dropdown-basic"
-              className="text-decoration-none "
+              className="text-decoration-none d-flex align-items-center"
             >
               <Image
-                src={"/static/images/avatar-2.jpg"}
+                src={Avatar1}
                 width={50}
                 height={50}
                 className="img-radius m-r-15"
                 alt="User Profile"
               />
-              <span className="m-r-15 text-black">Hi, Eka</span>
+              <div className="ms-4 text-black">
+                Hi, {getFirstTwoNames(decode?.name) || ""}
+              </div>
             </Dropdown.Toggle>
             <Dropdown.Menu className="text-center">
-              {/* <span>Logout</span> */}
               <div
                 onClick={handleLogout}
                 className="dud-logout cursor-pointer"

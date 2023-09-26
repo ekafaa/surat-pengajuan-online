@@ -1,0 +1,55 @@
+{
+  "result": [
+    {
+      "address": "Jl, Tidak Diketahui, No.25, Sidoarjo, Jawa Timur",
+      "birthplace": "Sidoarjo, 01 Januari 2000",
+      "country": "Indonseisa",
+      "job": "Wiraswasta",
+      "name": "Yusuf",
+      "nik": "3652139582719239",
+      "religion": {
+        "label": "Islam",
+        "value": "Islam"
+      },
+      "report": "Ingin Merekomendasikan sebuah Produk A",
+      "status": {
+        "label": "Belum Menikah",
+        "value": "Belum_Menikah"
+      }
+    },
+    {
+      "address": "Jl, Tidak Diketahui, No.25, Sidoarjo, Jawa Timur",
+      "birthplace": "Sidoarjo, 01 Januari 2000",
+      "country": "Indonseisa",
+      "job": "Wiraswasta",
+      "name": "Yusuf",
+      "nik": "3652139582719239",
+      "religion": {
+        "label": "Islam",
+        "value": "Islam"
+      },
+      "report": "Ingin Merekomendasikan sebuah Produk A",
+      "status": {
+        "label": "Belum Menikah",
+        "value": "Belum_Menikah"
+      }
+    },
+    {
+      "address": "Jl, Tidak Diketahui, No.25, Sidoarjo, Jawa Timur",
+      "birthplace": "Sidoarjo, 01 Januari 2000",
+      "country": "Indonseisa",
+      "job": "Wiraswasta",
+      "name": "Yusuf",
+      "nik": "3652139582719239",
+      "religion": {
+        "label": "Islam",
+        "value": "Islam"
+      },
+      "report": "Ingin Merekomendasikan sebuah Produk A",
+      "status": {
+        "label": "Belum Menikah",
+        "value": "Belum_Menikah"
+      }
+    }
+  ]
+}

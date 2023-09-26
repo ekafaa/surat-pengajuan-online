@@ -1,15 +1,16 @@
 import React from "react";
 import Aux from "../../components/_Aux";
 import NavbarLayout from "../../components/NavbarLayout";
-import Domicile from "../../components/Letter/domicile";
+import DomicileList from "../../components/Letter/table/domicile";
+import withAuth from "../../hoc/withAuth";
 
 function SuratDomisili() {
   return (
     <Aux>
       <NavbarLayout />
-      <Domicile />
+      <DomicileList />
     </Aux>
   );
 }
 
-export default SuratDomisili;
+export default withAuth(SuratDomisili);

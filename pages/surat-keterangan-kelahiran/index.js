@@ -1,15 +1,16 @@
 import React from "react";
 import Aux from "../../components/_Aux";
 import NavbarLayout from "../../components/NavbarLayout";
-import Birth from "../../components/Letter/birth";
+import BirthList from "../../components/Letter/table/birth";
+import withAuth from "../../hoc/withAuth";
 
-function SuratKelahiran() {
+function SuratKeteranganKelahiran() {
   return (
     <Aux>
       <NavbarLayout />
-      <Birth />
+      <BirthList />
     </Aux>
   );
 }
 
-export default SuratKelahiran;
+export default withAuth(SuratKeteranganKelahiran);

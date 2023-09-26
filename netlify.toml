@@ -1,0 +1,20 @@
+[build]
+  command = "yarn build"
+  publish = "out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[functions]]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

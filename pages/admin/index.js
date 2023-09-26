@@ -1,7 +1,9 @@
 "use client";
 import AdminDasboard from "../../components/Admin/AdminDashboard";
 import NavbarLayout from "../../components/NavbarLayout";
-export default function Home() {
+import withAuth from "../../hoc/withAuth";
+
+function Admin() {
   return (
     <main>
       <NavbarLayout />
@@ -9,3 +11,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default withAuth(Admin);

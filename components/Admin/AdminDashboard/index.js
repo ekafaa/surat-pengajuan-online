@@ -22,7 +22,9 @@ function AdminDasboard() {
         <h3 style={{ marginBottom: "10rem" }} className="text-center f-38">
           Taman Athena
         </h3>
-        <h3 className="text-center">Pilih Jenis Surat Permohonan :</h3>
+        <h3 className="text-center">
+          Pilih Untuk Melihat Jenis Surat Permohonan :
+        </h3>
         <Row className="my-5">
           <Col>
             <Buttons

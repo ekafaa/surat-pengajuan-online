@@ -1,10 +1,15 @@
-import Dashboard from "../components/Dashboard";
+"use client";
+import Dasboard from "../components/Dashboard";
 import NavbarLayout from "../components/NavbarLayout";
-export default function Home() {
+import withAuth from "../hoc/withAuth";
+
+function index() {
   return (
-    <div>
+    <main>
       <NavbarLayout />
-      <Dashboard />
-    </div>
+      <Dasboard />
+    </main>
   );
 }
+
+export default withAuth(index);

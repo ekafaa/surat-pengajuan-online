@@ -1,0 +1,99 @@
+{
+  "result": [
+    {
+      "address": "Jl Arjuna, No24, Bekasi, Jawa Barat",
+      "birthplace": "Bekasi, 19 Agustus 2001",
+      "country": "Indonseisa",
+      "gender": {
+        "label": "Wanita",
+        "value": "Wanita"
+      },
+      "job": "Wiraswasta",
+      "name": "Eka",
+      "religion": {
+        "label": "Islam",
+        "value": "Islam"
+      },
+      "status": {
+        "label": "Belum Menikah",
+        "value": "Belum_Menikah"
+      }
+    },
+    {
+      "address": "Jl Arjuna, No24, Bekasi, Jawa Barat",
+      "birthplace": "Bekasi, 19 Agustus 2001",
+      "country": "Indonseisa",
+      "gender": {
+        "label": "Wanita",
+        "value": "Wanita"
+      },
+      "job": "Wiraswasta",
+      "name": "Eka",
+      "religion": {
+        "label": "Islam",
+        "value": "Islam"
+      },
+      "status": {
+        "label": "Belum Menikah",
+        "value": "Belum_Menikah"
+      }
+    },
+    {
+      "address": "Jl Arjuna, No24, Bekasi, Jawa Barat",
+      "birthplace": "Bekasi, 19 Agustus 2001",
+      "country": "Indonseisa",
+      "gender": {
+        "label": "Wanita",
+        "value": "Wanita"
+      },
+      "job": "Wiraswasta",
+      "name": "Eka",
+      "religion": {
+        "label": "Islam",
+        "value": "Islam"
+      },
+      "status": {
+        "label": "Belum Menikah",
+        "value": "Belum_Menikah"
+      }
+    },
+    {
+      "address": "Jl Arjuna, No24, Bekasi, Jawa Barat",
+      "birthplace": "Bekasi, 19 Agustus 2001",
+      "country": "Indonseisa",
+      "gender": {
+        "label": "Wanita",
+        "value": "Wanita"
+      },
+      "job": "Wiraswasta",
+      "name": "Eka",
+      "religion": {
+        "label": "Islam",
+        "value": "Islam"
+      },
+      "status": {
+        "label": "Belum Menikah",
+        "value": "Belum_Menikah"
+      }
+    },
+    {
+      "address": "Jl Arjuna, No24, Bekasi, Jawa Barat",
+      "birthplace": "Bekasi, 19 Agustus 2001",
+      "country": "Indonseisa",
+      "gender": {
+        "label": "Wanita",
+        "value": "Wanita"
+      },
+      "job": "Wiraswasta",
+      "name": "Eka",
+      "religion": {
+        "label": "Islam",
+        "value": "Islam"
+      },
+      "status": {
+        "label": "Belum Menikah",
+        "value": "Belum_Menikah"
+      }
+    }
+  ]
+}

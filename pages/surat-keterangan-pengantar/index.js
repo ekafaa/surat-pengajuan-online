@@ -1,15 +1,16 @@
 import React from "react";
 import Aux from "../../components/_Aux";
 import NavbarLayout from "../../components/NavbarLayout";
-import Introductory from "../../components/Letter/introductory";
+import IntroductoryList from "../../components/Letter/table/introductory";
+import withAuth from "../../hoc/withAuth";
 
-function SuratPengantar() {
+function SuratKeteranganPengantar() {
   return (
     <Aux>
       <NavbarLayout />
-      <Introductory />
+      <IntroductoryList />
     </Aux>
   );
 }
 
-export default SuratPengantar;
+export default withAuth(SuratKeteranganPengantar);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Table } from "react-bootstrap";
-// import { TooltipOverlay } from "../../../TooltipOverlay";
+import { TooltipOverlay } from "../../../TooltipOverlay";
 import data from "./data.json";
 import ButtonTable from "../../../ButtonTable";
 import { useRouter } from "next/router";
@@ -19,7 +19,7 @@ function AdminDomicileComp() {
       >
         Back
       </ButtonTable>
-      <h3 className="mt-4">Data Surat Keterangan Domisili</h3>
+      <h3 className="mt-4">Data Keseluruhan Surat Keterangan Domisili</h3>
       <Table responsive className="mt-4">
         <thead className="text-center">
           <tr>
@@ -49,23 +49,18 @@ function AdminDomicileComp() {
                 <td>{item?.country}</td>
                 <td>{item?.address}</td>
                 <td className="d-flex justify-content-evenly">
-                  <ButtonTable onClick={() => alert(`edit id : ${i + 1}`)}>
-                    Edit
-                    {/* <i className="feather icon-edit mr-4 cursor-pointer" /> */}
-                  </ButtonTable>
                   <ButtonTable
                     className="tbl-red m-l-15"
                     onClick={() => alert(`delete id : ${i + 1}`)}
                   >
                     Delete
-                    {/* <i className="feather icon-edit mr-4 cursor-pointer" /> */}
                   </ButtonTable>
-                  {/* <ButtonTable
+                  <ButtonTable
                     className="tbl-blue m-l-15"
                     onClick={() => alert(`print id : ${i + 1}`)}
                   >
                     Print
-                  </ButtonTable> */}
+                  </ButtonTable>
                 </td>
               </tr>
             );

@@ -2,6 +2,7 @@ import React from "react";
 import Aux from "../../../components/_Aux";
 import AdminRenovComp from "../../../components/Admin/Letter/renovation";
 import NavbarLayout from "../../../components/NavbarLayout";
+import withAuth from "../../../hoc/withAuth";
 function AdminRenov() {
   return (
     <Aux>
@@ -11,4 +12,4 @@ function AdminRenov() {
   );
 }
 
-export default AdminRenov;
+export default withAuth(AdminRenov);
