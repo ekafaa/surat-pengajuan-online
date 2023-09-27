@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3030",
-    "build": "next build",
-    "start": "next start",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && next start -p 3030",
     "lint": "next lint"
   },
   "dependencies": {
@@ -27,7 +27,7 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.26.0",
+    "eslint": "^8.50.0",
     "eslint-config-next": "12.3.1",
     "file-loader": "^6.2.0"
   }
