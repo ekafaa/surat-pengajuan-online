@@ -50,7 +50,7 @@ function NavbarLayout() {
                 alt="User Profile"
               />
               <div className="ms-4 text-black">
-                Hi, {getFirstTwoNames(decode?.name) || ""}
+                Hi, {getFirstTwoNames(decode?.name) || "Admin"}
               </div>
             </Dropdown.Toggle>
             <Dropdown.Menu className="text-center">

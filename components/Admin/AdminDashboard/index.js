@@ -1,20 +1,37 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Buttons from "../../Button";
 import { useRouter } from "next/router";
-import { menuCondition } from "../../../utils/utilization";
-import dataDomicile from "../Letter/domicile/data.json";
-import dataBirth from "../Letter/birth/data.json";
-import dataIntroductory from "../Letter/introductory/data.json";
-import dataRenovation from "../Letter/renovation/data.json";
-import dataEvent from "../Letter/event/data.json";
+import { getJwtToken, menuCondition } from "../../../utils/utilization";
+import { API_URL } from "../../../utils/constant";
 
 function AdminDasboard() {
   const router = useRouter();
   const goToPage = (code) => {
     router.push(menuCondition(code));
   };
+
+  const [listData, setListData] = useState([]);
+
+  useEffect(async () => {
+    if (getJwtToken()) {
+      try {
+        const response = await fetch(`${API_URL}/admin/surat`, {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${getJwtToken()}`,
+          },
+        });
+        const result = await response.json();
+        setListData(result);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }, [setListData]);
+
   return (
     <Container>
       <div className="py-4">
@@ -33,7 +50,7 @@ function AdminDasboard() {
             >
               Surat Keterangan Domisili
               <span className="f-34 f-w-700">
-                {dataDomicile?.result?.length} Data
+                {listData?.domisili?.length} Data
               </span>
             </Buttons>
           </Col>
@@ -44,7 +61,7 @@ function AdminDasboard() {
             >
               Surat Keterangan Kelahiran
               <span className="f-34 f-w-700">
-                {dataBirth?.result?.length} Data
+                {listData?.kelahiran?.length} Data
               </span>
             </Buttons>
           </Col>
@@ -55,7 +72,7 @@ function AdminDasboard() {
             >
               Surat Keterangan Pengantar
               <span className="f-34 f-w-700">
-                {dataIntroductory?.result?.length} Data
+                {listData?.pengantar?.length} Data
               </span>
             </Buttons>
           </Col>
@@ -68,7 +85,7 @@ function AdminDasboard() {
             >
               Surat Izin Renovasi
               <span className="f-34 f-w-700">
-                {dataRenovation?.result?.length} Data
+                {listData?.renovasi?.length} Data
               </span>
             </Buttons>
           </Col>
@@ -79,7 +96,7 @@ function AdminDasboard() {
             >
               Surat Izin Acara
               <span className="f-34 f-w-700">
-                {dataEvent?.result?.length} Data
+                {listData?.acara?.length} Data
               </span>
             </Buttons>
           </Col>

@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
-import { TooltipOverlay } from "../../../TooltipOverlay";
-import data from "./data.json";
 import ButtonTable from "../../../ButtonTable";
 import { useRouter } from "next/router";
+import { API_URL } from "../../../../utils/constant";
+import { getJwtToken } from "../../../../utils/utilization";
+import PDFGeneratorDomicile from "../../../../utils/pdf/domicile";
 
 function AdminDomicileComp() {
   const router = useRouter();
   const handleBack = () => {
     router.back();
   };
+  const [listData, setListData] = useState([]);
+
+  useEffect(async () => {
+    if (getJwtToken()) {
+      try {
+        const response = await fetch(`${API_URL}/admin/surat`, {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${getJwtToken()}`,
+          },
+        });
+        const result = await response.json();
+        setListData(result);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }, [setListData]);
+
   return (
     <Container>
       <ButtonTable
@@ -36,28 +57,22 @@ function AdminDomicileComp() {
           </tr>
         </thead>
         <tbody className="text-center">
-          {data.result.map((item, i) => {
+          {listData?.domisili?.map((item, i) => {
             return (
               <tr key={i}>
                 <td>{i + 1}</td>
                 <td>{item?.name}</td>
                 <td>{item?.birthplace}</td>
-                <td>{item?.gender?.value}</td>
+                <td>{item?.gender}</td>
                 <td>{item?.job}</td>
-                <td>{item?.religion?.value}</td>
-                <td>{item?.status?.value}</td>
+                <td>{item?.religion}</td>
+                <td>{item?.status.replace(/_/g, ' ')}</td>
                 <td>{item?.country}</td>
                 <td>{item?.address}</td>
                 <td className="d-flex justify-content-evenly">
                   <ButtonTable
-                    className="tbl-red m-l-15"
-                    onClick={() => alert(`delete id : ${i + 1}`)}
-                  >
-                    Delete
-                  </ButtonTable>
-                  <ButtonTable
                     className="tbl-blue m-l-15"
-                    onClick={() => alert(`print id : ${i + 1}`)}
+                    onClick={() => PDFGeneratorDomicile(item)}
                   >
                     Print
                   </ButtonTable>

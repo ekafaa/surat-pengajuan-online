@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import data from "./data.json";
 import ButtonTable from "../../../ButtonTable";
 import { useRouter } from "next/router";
+import { API_URL } from "../../../../utils/constant";
+import { getJwtToken } from "../../../../utils/utilization";
+import PDFGeneratorIntroductory from "../../../../utils/pdf/introductory";
 
 function AdminIntroductoryComp() {
   const router = useRouter();
   const handleBack = () => {
     router.back();
   };
+
+  const [listData, setListData] = useState([]);
+
+  useEffect(async () => {
+    if (getJwtToken()) {
+      try {
+        const response = await fetch(`${API_URL}/admin/surat`, {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `Bearer ${getJwtToken()}`,
+          },
+        });
+        const result = await response.json();
+        setListData(result);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }, [setListData]);
+
   return (
     <Container>
       <ButtonTable
@@ -36,7 +60,7 @@ function AdminIntroductoryComp() {
           </tr>
         </thead>
         <tbody className="text-center">
-          {data.result.map((item, i) => {
+          {listData?.pengantar?.map((item, i) => {
             return (
               <tr key={i}>
                 <td>{i + 1}</td>
@@ -44,21 +68,15 @@ function AdminIntroductoryComp() {
                 <td>{item?.nik}</td>
                 <td>{item?.birthplace}</td>
                 <td>{item?.job}</td>
-                <td>{item?.religion?.value}</td>
-                <td>{item?.status?.value}</td>
+                <td>{item?.religion}</td>
+                <td>{item?.status.replace(/_/g, ' ')}</td>
                 <td>{item?.country}</td>
                 <td>{item?.address}</td>
                 <td>{item?.report}</td>
                 <td className="d-flex justify-content-evenly">
                   <ButtonTable
-                    className="tbl-red m-l-15"
-                    onClick={() => alert(`delete id : ${i + 1}`)}
-                  >
-                    Delete
-                  </ButtonTable>
-                  <ButtonTable
                     className="tbl-blue m-l-15"
-                    onClick={() => alert(`print id : ${i + 1}`)}
+                    onClick={() => PDFGeneratorIntroductory(item)}
                   >
                     Print
                   </ButtonTable>

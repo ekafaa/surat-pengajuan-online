@@ -64,11 +64,7 @@ export default function Login() {
           timer: 1500,
           showConfirmButton: false,
         }).then(() => {
-          if (roleUser === "admin") {
-            router.push(ROUTES.ADMIN_DASHBOARD());
-          } else {
-            router.push(ROUTES.USER_DASHBOARD());
-          }
+          router.push(ROUTES.USER_DASHBOARD());
         });
       }
     } catch (error) {

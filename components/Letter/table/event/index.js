@@ -4,7 +4,6 @@ import ButtonTable from "../../../ButtonTable";
 import { useRouter } from "next/router";
 import { API_URL, ROUTES } from "../../../../utils/constant";
 import { getDayOfMonth, getJwtToken } from "../../../../utils/utilization";
-import Link from "next/link";
 import Swal from "sweetalert2";
 import PDFGeneratorEvent from "../../../../utils/pdf/event";
 
@@ -75,7 +74,6 @@ function EventComp() {
     });
   };
 
-  const handleViewPdf = () => { };
   return (
     <Container>
       <h3 className="mt-4">Surat Izin Acara</h3>
