@@ -5,7 +5,7 @@ export const AUTH_HEADERS = {
   credentials: 'include'
 };
 
-export const API_URL = "https://surat-pengajuan-api.vercel.app/";
+export const API_URL = "https://surat-pengajuan-api.vercel.app";
 
 export const allowedPathsUser = [
   "/",
