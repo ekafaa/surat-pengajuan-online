@@ -2,6 +2,7 @@ import { getJwtToken } from "./utilization";
 
 export const AUTH_HEADERS = {
   "Content-type": "application/json",
+  credentials: 'include'
 };
 
 export const API_URL = "https://surat-pengajuan-api.vercel.app/";
